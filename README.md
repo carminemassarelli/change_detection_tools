@@ -35,7 +35,7 @@ If the results obtained through these tools or one of them are part of a scienti
 **For Integration into Your Software or Project**  
 If you integrate portions of these tools or use them as a module within your software, application, or other code-based project, please include clear attribution in your project documentation (README, license, "Credits" section, or in-code comments), for example:
 
-### Credits
+Credits
 This project uses, or was inspired by, "Change Detection Tools" available on GitHub. Link to the original repository: https://github.com/carminemassarelli/change_detection_tools  
   
 ## Code Development Support  
