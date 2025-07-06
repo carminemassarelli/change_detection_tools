@@ -558,7 +558,7 @@ if __name__ == "__main__":
     # Optional AOI topics
     parser.add_argument("--aoi", nargs=4, metavar=('XMIN', 'YMIN', 'XMAX', 'YMAX'), type=float,
                         help="Area of ​​Interest (AOI) coordinates in the raster reference system.\n"
-                             "Formato: XMIN YMIN XMAX YMAX (es. 401000.0 4501000.0 403000.0 4503000.0)")
+                             "Format: XMIN YMIN XMAX YMAX (es. 401000.0 4501000.0 403000.0 4503000.0)")
 
     # Class Selection Topics (Mutually Exclusive Groups for Clarity)
     class_group_natural = parser.add_mutually_exclusive_group()
