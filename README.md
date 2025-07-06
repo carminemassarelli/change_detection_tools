@@ -19,7 +19,7 @@ This repository offers a suite of tools designed to facilitate the analysis of c
 
 The tools included are the following:
 
-- Python script from the command line ([change_detection.py](https://github.com/carminemassarelli/change_detection_tools) coming soon), which represents the heart of the project. A versatile Python script that allows you to run your entire change detection workflow directly from the terminal. It offers complete control over all parameters, including class selection, Area of Interest (AOI) definition, and input/output path management. Ideal for automation, integration into data processing pipelines, or for power users.
+- Python script from the command line ([change_detection.py](https://github.com/carminemassarelli/change_detection_tools/blob/main/change_detection.py)), which represents the heart of the project. A versatile Python script that allows you to run your entire change detection workflow directly from the terminal. It offers complete control over all parameters, including class selection, Area of Interest (AOI) definition, and input/output path management. Ideal for automation, integration into data processing pipelines, or for power users.
 
 - Desktop application with Graphical User Interface ([change_detection_GUI.py](https://github.com/carminemassarelli/change_detection_tools) coming soon) for users who prefer a more intuitive and visual approach. A Python script is available that integrates a Tkinter-based User Interface. This desktop application allows you to interact with change detection capabilities through a graphical window, making it easy to select files, enter parameters, and view progress, without the need to type complex commands.
 
