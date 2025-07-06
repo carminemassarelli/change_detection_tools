@@ -3,7 +3,7 @@ message: "If you use or modify these tools for your research, publications or if
 authors:
   - family-names: "Massarelli"
     given-names: "Carmine"
-	orcid: "https://orcid.org/0000-0001-8006-6998"
+    orcid: "https://orcid.org/0000-0001-8006-6998"
 title: "Change Detection Tools"
 version: "1.0.0"
 date-released: 2025-07-06
