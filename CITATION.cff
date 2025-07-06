@@ -1,0 +1,10 @@
+cff-version: 1.0.0
+message: "If you use or modify these tools for your research, publications or if you integrate them into your software/project, I kindly ask you to cite it. Citing helps to give visibility to the work done and to allow others to trace the original source."
+authors:
+  - family-names: "Massarelli"
+    given-names: "Carmine"
+	orcid: "https://orcid.org/0000-0001-8006-6998"
+title: "Change Detection Tools"
+version: "1.0.0"
+date-released: 2025-07-06
+url: "https://github.com/carminemassarelli/change_detection_tools"
