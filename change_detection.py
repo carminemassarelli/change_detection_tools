@@ -60,7 +60,7 @@ def import_raster(filepath):
                       Returns None if the file cannot be opened.
     """
     if not os.path.exists(filepath):
-        print(f"Errore: Il file {filepath} non esiste.")
+        print(f"Error: The file {filepath} does not exist.")
         return None
     
     dataset = gdal.Open(filepath, gdal.GA_ReadOnly)
@@ -615,7 +615,7 @@ if __name__ == "__main__":
     aoi_coords = tuple(args.aoi) if args.aoi else None
     if aoi_coords:
         if not (aoi_coords[0] < aoi_coords[2] and aoi_coords[1] < aoi_coords[3]):
-            print("Errore: AOI non valida. XMIN deve essere < XMAX e YMIN deve essere < YMAX.")
+            print("Error: Invalid AOI. XMIN must be < XMAX and YMIN must be < YMAX.")
             sys.exit(1)
 
     # Call the main change detection function with the given classes
