@@ -352,7 +352,7 @@ def check_aoi_overlap(full_data_t0_array, full_data_t1_array, dataset_t0, datase
         if raster_overlap_xmin >= raster_overlap_xmax or raster_overlap_ymin >= raster_overlap_ymax:
             # There is no overlap between the two rasters, so the AOI cannot intersect a valid common area.
             success = False
-            message = "Notice: T0 and T1 rasters do not have a common overlap area. No AOI clipping possible for comparison."
+            message = "Warning: T0 and T1 rasters do not have a common overlap area. No AOI clipping possible for comparison."
             return full_data_t0_array, full_data_t1_array, original_geotransform_t0, original_projection_t0, success, message
 
         # Determines the intersection between AOI and raster overlap area
