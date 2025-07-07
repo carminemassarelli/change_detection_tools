@@ -477,7 +477,7 @@ def main_change_detection(raster_t0_path, raster_t1_path, output_classified_rast
         return
 
     # At this point, cropped_data_t0 and cropped_data_t1 contain:
-    # The data cropped by the AOI (if the AOI was valid and produced a compatible crop).
+    # Clipped data from AOI (if the AOI was valid and produced a compatible crop).
     # The original complete data (if no AOI was specified, or if the AOI did not produce a valid/compatible crop).
 
     # Main condition to proceed: the rasters (or their cut portions) must have the same dimensions.
