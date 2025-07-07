@@ -405,7 +405,7 @@ def check_aoi_overlap(full_data_t0_array, full_data_t1_array, dataset_t0, datase
                     message = "Warning: The area of ​​interest has produced an empty clipped raster. No change operation."
                     return full_data_t0_array, full_data_t1_array, original_geotransform_t0, original_projection_t0, success, message
                 
-                # IMPORTANT: After cropping, make sure the shapes are identical for comparison.
+                # IMPORTANT: After clipping, make sure the shapes are identical for comparison.
                 # If the resolutions of the original rasters are different, even a crop on the same AOI may produce arrays of different sizes.
                 if cropped_data_t0.shape != cropped_data_t1.shape:
                     success = False
