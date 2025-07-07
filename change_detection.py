@@ -480,7 +480,7 @@ def main_change_detection(raster_t0_path, raster_t1_path, output_classified_rast
     # Clipped data from AOI (if the AOI was valid and produced a compatible crop).
     # The original complete data (if no AOI was specified, or if the AOI did not produce a valid/compatible crop).
 
-    # Main condition to proceed: the rasters (or their cut portions) must have the same dimensions.
+    # Main condition to proceed: the rasters (or their clipped portions) must have the same dimensions.
     if cropped_data_t0.shape != cropped_data_t1.shape:
         print("Error: The rasters (or their cropped portions) have different dimensions and cannot be compared pixel by pixel.")
         print(f"Dimensions T0: {cropped_data_t0.shape}, Dimensions T1: {cropped_data_t1.shape}")
