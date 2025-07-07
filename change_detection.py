@@ -482,7 +482,7 @@ def main_change_detection(raster_t0_path, raster_t1_path, output_classified_rast
 
     # Main condition to proceed: the rasters (or their clipped portions) must have the same dimensions.
     if cropped_data_t0.shape != cropped_data_t1.shape:
-        print("Error: The rasters (or their cropped portions) have different dimensions and cannot be compared pixel by pixel.")
+        print("Error: The rasters (or their clipped portions) have different dimensions and cannot be compared pixel by pixel.")
         print(f"Dimensions T0: {cropped_data_t0.shape}, Dimensions T1: {cropped_data_t1.shape}")
         print("The process stops.")
         dataset_t0 = None    
