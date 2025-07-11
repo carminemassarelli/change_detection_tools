@@ -2,7 +2,7 @@
 name=Change Detection Tool
 qgisMinimumVersion=3.0
 description=A plugin to perform change detection between two rasters by comparing pixel by pixel.
-version=1.0
+version=1.1
 about=This plugin allows you to compare two rasters classified with integer values ​​to identify, for example, changes between different land use/cover/consumption classes.
 author=Carmine Massarelli
 email=c.massarelli78@gmail.com
