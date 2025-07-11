@@ -6,7 +6,7 @@ from osgeo import gdal, osr
 from qgis.PyQt import uic
 from qgis.PyQt.QtWidgets import QDialog, QMessageBox, QProgressBar, QLineEdit
 from qgis.PyQt.QtCore import QThread, pyqtSignal, QCoreApplication
-from qgis.core import QgsRasterLayer, QgsMessageLog, Qgis, QgsMapLayer, QgsMapLayerProxyModel, QgsRectangle 
+from qgis.core import QgsRasterLayer, QgsMessageLog, Qgis, QgsMapLayer, QgsMapLayerProxyModel, QgsRectangle, QgsCoordinateReferenceSystem, QgsProject 
 from qgis.gui import QgsMapLayerComboBox, QgsFileWidget 
 from .change_detection_dialog_base import Ui_Dialog as FORM_CLASS
 
@@ -535,6 +535,33 @@ class ChangeDetectionDialog(QDialog, FORM_CLASS):
             self.on_worker_finished("Process stopped due to missing inputs.")
             return
 
+        # --- start of CRS checks ---
+        raster_t0_crs = raster_t0_layer.crs().authid()
+        raster_t1_crs = raster_t1_layer.crs().authid()
+        project_crs = QgsProject.instance().crs().authid()
+
+        self.log_to_text_browser(f"CRS Raster T0: {raster_t0_crs}", Qgis.Info)
+        self.log_to_text_browser(f"CRS Raster T1: {raster_t1_crs}", Qgis.Info)
+        self.log_to_text_browser(f"CRS Project QGIS: {project_crs}", Qgis.Info)
+
+        # 1. Check: if the rasters have different reference systems between them
+        if raster_t0_crs != raster_t1_crs:
+            message = "Warning: The two rasters have different reference systems, change detection will not be performed."
+            self.log_to_text_browser(message, Qgis.Critical)
+            QMessageBox.critical(self, "Error CRS", message)
+            self.on_worker_finished("Process stopped due to different CRS between rasters.")
+            return
+
+        # 2. Check: if the two rasters have the same reference system but different from the project one
+        if raster_t0_crs != project_crs:
+            message = "Warning: The rasters have a different reference system than the project one, the results may not be consistent."
+            self.log_to_text_browser(message, Qgis.Critical)
+            QMessageBox.critical(self, "Warning CRS", message)
+            self.on_worker_finished("Process stopped due to different CRS between rasters and project.")
+            return            
+
+        # --- stop of CRS checks ---
+        
         raster_t0_path = raster_t0_layer.source()
         raster_t1_path = raster_t1_layer.source()
         output_classified_raster_path = os.path.join(output_folder, "change_detection_classified_result.tif")
